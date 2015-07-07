@@ -1,0 +1,79 @@
+<html>
+<head>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="js/module.js"></script>
+<script src="js/multi-carousel.directive.js"></script>
+<link rel="stylesheet" href="styles/component.css">
+<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+<script>
+    (function() {
+        'use strict';
+
+        angular
+            .module('app', ['angularMultiCarousel'])
+            .controller('MainCtrl', MainCtrl);
+
+        function MainCtrl($scope) {
+            $scope.items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        }
+
+    }());
+</script>
+<style>
+
+    body {
+        background: #eee;
+        padding: 50px;
+    }
+
+    multi-carousel > inner {
+        margin-left: -590px;
+    }
+
+    carousel-item {
+        background: #fff;
+    }
+
+    carousel-item > div {
+        background: #f8f8f8;
+        width: 100%;
+        height: 260px;
+    }
+
+    carousel-item > footer {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .cta {
+        margin-top: 30px;
+    }
+
+</style>
+</head>
+<body ng-app="app" ng-controller="MainCtrl">
+
+    <h1>Angular Multi Carousel</h1>
+    <p>Showcase many items at once</p>
+
+    <multi-carousel>
+        <inner>
+            <carousel-item ng-repeat="item in items track by item">
+                <div></div>
+                <footer>{{item}}</footer>
+            </carousel-item>
+        </inner>
+
+        <div class="cta">
+            <div class="pull-left">
+                <button ng-click="prev()">Prev</button>
+            </div>
+            <div class="pull-right">
+                <button ng-click="next()">Next</button>
+            </div>
+        </div>
+    </multi-carousel>
+
+</body>
+</html>

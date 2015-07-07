@@ -1,0 +1,38 @@
+$multi-carousel-item-width: 380px !default;
+$multi-carousel-item-gutter: 20px !default;
+
+multi-carousel {
+    display: block;
+    overflow-x: hidden;
+    white-space: nowrap;
+
+    > inner {
+        display: block;
+
+        &.next,
+        &.prev {
+            @include transition(transform .5s ease);
+        }
+
+        &.next-add {
+            @include transform(translateX($multi-carousel-item-width + $multi-carousel-item-gutter));
+            &.next-add-active {
+                @include transform(translateX(0));
+            }
+        }
+
+        &.prev-add {
+            @include transform(translateX(($multi-carousel-item-width + $multi-carousel-item-gutter) * -1));
+            &.prev-add-active {
+                @include transform(translateX(0));
+            }
+        }
+    }
+
+}
+
+carousel-item {
+    display: inline-block;
+    width: $multi-carousel-item-width;
+    margin-right: $multi-carousel-item-gutter;
+}

@@ -1,0 +1,30 @@
+{
+    "name": "angular-multi-carousel",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.7.6",
+        "browser-sync-spa": "^1.0.2",
+        "del": "^1.2.0",
+        "eslint": "^0.21.2",
+        "eslint-plugin-angular": "0.0.7",
+        "gulp": "^3.8.11",
+        "gulp-eslint": "^0.12.0",
+        "gulp-filter": "^2.0.2",
+        "gulp-flatten": "0.0.4",
+        "gulp-load-plugins": "^0.10.0",
+        "gulp-sass": "^2.0.1",
+        "gulp-size": "^1.2.2",
+        "gulp-sourcemaps": "^1.5.2",
+        "gulp-util": "^3.0.5",
+        "main-bower-files": "^2.8.0",
+        "require-dir": "^0.3.0",
+        "util": "^0.10.3"
+    }
+}
