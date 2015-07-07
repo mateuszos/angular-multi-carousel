@@ -19,4 +19,4 @@ gulp.task('clean', function (done) {
     $.del([options.dist + '/', options.tmp + '/'], done);
 });
 
-gulp.task('build', ['scripts', 'styles', 'other']);
+gulp.task('build', ['scripts', 'styles', 'other', 'templates']);

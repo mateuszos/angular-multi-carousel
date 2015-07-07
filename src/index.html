@@ -15,7 +15,7 @@
             .controller('MainCtrl', MainCtrl);
 
         function MainCtrl($scope) {
-            $scope.items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            $scope.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         }
 
     }());
@@ -50,6 +50,17 @@
         margin-top: 30px;
     }
 
+    multi-carousel > .controls {
+        padding: 20px 0;
+    }
+
+    multi-carousel > .controls .left {
+        float: left;
+    }
+    multi-carousel > .controls .right {
+        float: right;
+    }
+
 </style>
 </head>
 <body ng-app="app" ng-controller="MainCtrl">
@@ -57,22 +68,11 @@
     <h1>Angular Multi Carousel</h1>
     <p>Showcase many items at once</p>
 
-    <multi-carousel>
-        <inner>
-            <carousel-item ng-repeat="item in items track by item">
-                <div></div>
-                <footer>{{item}}</footer>
-            </carousel-item>
-        </inner>
-
-        <div class="cta">
-            <div class="pull-left">
-                <button ng-click="prev()">Prev</button>
-            </div>
-            <div class="pull-right">
-                <button ng-click="next()">Next</button>
-            </div>
-        </div>
+    <multi-carousel items="numbers">
+        <carousel-item ng-repeat="number in numbers track by number">
+            <div></div>
+            <footer>{{number}}</footer>
+        </carousel-item>
     </multi-carousel>
 
 </body>

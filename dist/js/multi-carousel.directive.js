@@ -8,7 +8,11 @@
     function multiCarousel($animate) {
         return {
             restrict: 'E',
-            scope: true,
+            transclude: true,
+            templateUrl: 'template/multi-carousel/multi-carousel.html',
+            scope: {
+                items: '='
+            },
             link: link
         };
 
