@@ -12,7 +12,5 @@ gulp.task('scripts', function () {
     ])
     .pipe($.eslint())
     .pipe($.eslint.format())
-    .pipe($.sourcemaps.init())
-    .pipe($.sourcemaps.write())
     .pipe($.size());
 });

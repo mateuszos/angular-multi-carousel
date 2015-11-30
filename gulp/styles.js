@@ -16,9 +16,8 @@ gulp.task('styles', function () {
     return gulp.src([
         options.src + '/**/*.scss'
     ])
-    .pipe($.sourcemaps.init())
     .pipe($.sass(sassOptions)).on('error', options.errorHandler('Sass'))
-    .pipe($.sourcemaps.write())
+    .pipe($.autoprefixer())
     .pipe(gulp.dest(options.dist))
     .pipe(browserSync.reload({
         stream: true

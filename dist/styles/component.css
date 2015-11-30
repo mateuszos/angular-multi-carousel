@@ -2,41 +2,31 @@ multi-carousel {
   display: block;
   overflow-x: hidden;
   white-space: nowrap; }
-  multi-carousel > inner {
+  multi-carousel inner {
     display: block; }
-    multi-carousel > inner.next,
-    multi-carousel > inner.prev {
-      -webkit-transition: -webkit-transform 0.5s ease;
-      -moz-transition: -moz-transform 0.5s ease;
-      transition: transform 0.5s ease; }
-    multi-carousel > inner.next-add {
+    multi-carousel inner.next, multi-carousel inner.prev {
+      -webkit-transition: -webkit-transform .5s ease;
+      transition: -webkit-transform .5s ease;
+      transition: transform .5s ease;
+      transition: transform .5s ease, -webkit-transform .5s ease; }
+    multi-carousel inner.next-add {
       -webkit-transform: translateX(400px);
-      -moz-transform: translateX(400px);
-      -ms-transform: translateX(400px);
-      -o-transform: translateX(400px);
-      transform: translateX(400px); }
-      multi-carousel > inner.next-add.next-add-active {
+          -ms-transform: translateX(400px);
+              transform: translateX(400px); }
+      multi-carousel inner.next-add.next-add-active {
         -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
-        -o-transform: translateX(0);
-        transform: translateX(0); }
-    multi-carousel > inner.prev-add {
+            -ms-transform: translateX(0);
+                transform: translateX(0); }
+    multi-carousel inner.prev-add {
       -webkit-transform: translateX(-400px);
-      -moz-transform: translateX(-400px);
-      -ms-transform: translateX(-400px);
-      -o-transform: translateX(-400px);
-      transform: translateX(-400px); }
-      multi-carousel > inner.prev-add.prev-add-active {
+          -ms-transform: translateX(-400px);
+              transform: translateX(-400px); }
+      multi-carousel inner.prev-add.prev-add-active {
         -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
-        -o-transform: translateX(0);
-        transform: translateX(0); }
+            -ms-transform: translateX(0);
+                transform: translateX(0); }
 
 carousel-item {
   display: inline-block;
   width: 380px;
   margin-right: 20px; }
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9tdWx0aS1jYXJvdXNlbC5zY3NzIiwiLi4vLi4vYm93ZXJfY29tcG9uZW50cy9ib3VyYm9uL2FwcC9hc3NldHMvc3R5bGVzaGVldHMvY3NzMy9fdHJhbnNpdGlvbi5zY3NzIiwiLi4vLi4vYm93ZXJfY29tcG9uZW50cy9ib3VyYm9uL2FwcC9hc3NldHMvc3R5bGVzaGVldHMvYWRkb25zL19wcmVmaXhlci5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBLGNBQWMsQ0FBQztFQUNYLE9BQU8sRUFBRSxLQUFNO0VBQ2YsVUFBVSxFQUFFLE1BQU87RUFDbkIsV0FBVyxFQUFFLE1BQU8sR0FIUjtFQUtWLGNBQWMsR0FBRyxLQUFLLENBQWhCO0lBQ0osT0FBTyxFQUFFLEtBQU0sR0FEVjtJQUlKLGNBQWMsR0FBRyxLQUFLLEtBQUs7SUFDcEMsY0FBYyxHQUFHLEtBQUssS0FBSyxDQURaO01DNEJYLGtCQUFrQixFQXhCUixpQkFBQyxDREgyQixJQUFHLENBQUMsSUFBSTtNQzRCM0MsZUFBZSxFQXhCUixjQUFDLENESjJCLElBQUcsQ0FBQyxJQUFJO01DNkJ0QyxVQUFVLEVEN0JVLFNBQVMsQ0FBQyxJQUFHLENBQUMsSUFBSSxHQURsQztJQUlQLGNBQWMsR0FBRyxLQUFLLFNBQVMsQ0FBckI7TUVtQlgsaUJBQW9CLEVGbEJHLGlCQUFVO01Fc0JqQyxjQUFpQixFRnRCTSxpQkFBVTtNRTBCakMsYUFBZ0IsRUYxQk8saUJBQVU7TUU4QmpDLFlBQWUsRUY5QlEsaUJBQVU7TUVrQ2pDLFNBQVksRUZsQ1csaUJBQVUsR0FEckI7TUFFUCxjQUFjLEdBQUcsS0FBSyxTQUFTLGdCQUFnQixDQUE5QjtRRWlCdEIsaUJBQW9CLEVGaEJPLGFBQVU7UUVvQnJDLGNBQWlCLEVGcEJVLGFBQVU7UUV3QnJDLGFBQWdCLEVGeEJXLGFBQVU7UUU0QnJDLFlBQWUsRUY1QlksYUFBVTtRRWdDckMsU0FBWSxFRmhDZSxhQUFVLEdBRGQ7SUFLdEIsY0FBYyxHQUFHLEtBQUssU0FBUyxDQUFyQjtNRVlYLGlCQUFvQixFRlhHLGtCQUFVO01FZWpDLGNBQWlCLEVGZk0sa0JBQVU7TUVtQmpDLGFBQWdCLEVGbkJPLGtCQUFVO01FdUJqQyxZQUFlLEVGdkJRLGtCQUFVO01FMkJqQyxTQUFZLEVGM0JXLGtCQUFVLEdBRHJCO01BRVAsY0FBYyxHQUFHLEtBQUssU0FBUyxnQkFBZ0IsQ0FBOUI7UUVVdEIsaUJBQW9CLEVGVE8sYUFBVTtRRWFyQyxjQUFpQixFRmJVLGFBQVU7UUVpQnJDLGFBQWdCLEVGakJXLGFBQVU7UUVxQnJDLFlBQWUsRUZyQlksYUFBVTtRRXlCckMsU0FBWSxFRnpCZSxhQUFVLEdBRGQ7O0FBUS9CLGFBQWEsQ0FBQztFQUNWLE9BQU8sRUFBRSxZQUFhO0VBQ3RCLEtBQUssRUFuQ21CLEtBQUs7RUFvQzdCLFlBQVksRUFuQ2EsSUFBSSxHQWdDbEIiLCJmaWxlIjoic3R5bGVzL2NvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6W251bGwsbnVsbCxudWxsXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

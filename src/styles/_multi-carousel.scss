@@ -6,25 +6,27 @@ multi-carousel {
     overflow-x: hidden;
     white-space: nowrap;
 
-    > inner {
+    inner {
         display: block;
 
         &.next,
         &.prev {
-            @include transition(transform .5s ease);
+            transition: transform .5s ease;
         }
 
         &.next-add {
-            @include transform(translateX($multi-carousel-item-width + $multi-carousel-item-gutter));
+            transform: translateX($multi-carousel-item-width + $multi-carousel-item-gutter);
+
             &.next-add-active {
-                @include transform(translateX(0));
+                transform: translateX(0);
             }
         }
 
         &.prev-add {
-            @include transform(translateX(($multi-carousel-item-width + $multi-carousel-item-gutter) * -1));
+            transform: translateX(($multi-carousel-item-width + $multi-carousel-item-gutter) * -1);
+
             &.prev-add-active {
-                @include transform(translateX(0));
+                transform: translateX(0);
             }
         }
     }

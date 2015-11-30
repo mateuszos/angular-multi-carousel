@@ -1,9 +1,11 @@
-<inner ng-transclude></inner>
-<div class="controls" ng-show="items.length > 1">
-    <a class="left multi-carousel-control" ng-click="prev()">
-        <i class="glyphicon glyphicon-chevron-left"></i>
-    </a>
-    <a class="right multi-carousel-control" ng-click="next()">
-        <i class="glyphicon glyphicon-chevron-right"></i>
-    </a>
+<div ng-mouseover="disable()" ng-mouseleave="enable()">
+    <inner ng-transclude></inner>
+    <div class="controls" ng-show="items.length > 1">
+        <a class="left multi-carousel-control" ng-click="prev()">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+        </a>
+        <a class="right multi-carousel-control" ng-click="next()">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    </div>
 </div>
