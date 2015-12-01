@@ -29,11 +29,17 @@
             scope.enable = enable;
             scope.disable = disable;
 
-            $interval(function() {
-                if (enabled) {
-                    next();
-                }
-            }, attrs.interval);
+            if (attrs.interval) {
+                start();
+            }
+
+            function start() {
+                $interval(function() {
+                    if (enabled) {
+                        next();
+                    }
+                }, attrs.interval);
+            }
 
             function prev() {
 

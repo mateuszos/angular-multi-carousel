@@ -16,8 +16,8 @@
 
         function MainCtrl($scope) {
             var vm = this;
-            vm.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
             vm.interval = 3000;
+            vm.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         }
 
     }());
@@ -70,14 +70,15 @@
     <h1>Angular Multi Carousel</h1>
     <p>Showcase many items at once</p>
 
-    <p><strong>Data:</strong> {{main.numbers}}</p>
-
     <multi-carousel items="main.numbers" interval="{{main.interval}}">
         <carousel-item ng-repeat="number in main.numbers track by number">
             <div class="bg"></div>
             <footer>{{number}}</footer>
         </carousel-item>
     </multi-carousel>
+
+    <h2>State</h2>
+    <pre>{{main | json}}</pre>
 
 </body>
 </html>
