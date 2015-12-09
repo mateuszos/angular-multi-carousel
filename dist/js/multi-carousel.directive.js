@@ -29,7 +29,7 @@
             scope.enable = enable;
             scope.disable = disable;
 
-            if (attrs.interval) {
+            if (attrs.interval && scope.items.length) {
                 start();
             }
 
