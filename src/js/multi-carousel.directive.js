@@ -22,6 +22,7 @@
             var enabled = true;
             var moving = false;
             var inner = angular.element(element[0].querySelector('inner'));
+            var interval;
 
             // API
             scope.prev = prev;
@@ -29,13 +30,13 @@
             scope.enable = enable;
             scope.disable = disable;
 
-            if (attrs.interval && scope.items) {
-                start();
-            }
+            attrs.$observe('interval', start);
+            scope.$watch('items', start);
 
             function start() {
-                $interval(function() {
-                    if (enabled) {
+                $interval.cancel(interval);
+                interval = $interval(function() {
+                    if (enabled && scope.items.length && scope.$eval(attrs.interval)) {
                         next();
                     }
                 }, attrs.interval);
