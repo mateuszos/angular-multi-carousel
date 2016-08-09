@@ -45,6 +45,10 @@
                 // that the last item is moved to the begining.
                 scope.items.unshift(scope.items.pop());
 
+                // Ensures continuity during navigation
+                // when there's only one invisible item
+                scope.items = scope.items.concat(angular.copy(scope.items));
+
                 $interval.cancel(interval);
                 interval = $interval(function() {
                     if (enabled && scope.items.length && scope.$eval(attrs.interval)) {
