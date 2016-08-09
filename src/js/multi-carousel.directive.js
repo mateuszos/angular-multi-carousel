@@ -23,6 +23,7 @@
             var moving = false;
             var inner = angular.element(element[0].querySelector('inner'));
             var interval;
+            var initialized = false;
 
             // API
             scope.prev = prev;
@@ -34,6 +35,20 @@
             scope.$watch('items', start);
 
             function start() {
+                // avoid infinite loop when modifying items
+                if (initialized) {
+                    return;
+                }
+                initialized = true;
+
+                // DOM wrapper being shifted to the left requires
+                // that the last item is moved to the begining.
+                scope.items.unshift(scope.items.pop());
+
+                // Ensures continuity during navigation
+                // when there's only one invisible item
+                scope.items = scope.items.concat(angular.copy(scope.items));
+
                 $interval.cancel(interval);
                 interval = $interval(function() {
                     if (enabled && scope.items.length && scope.$eval(attrs.interval)) {
