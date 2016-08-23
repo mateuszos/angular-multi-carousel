@@ -35,6 +35,12 @@
             scope.$watch('items', start);
 
             function start() {
+                // checks if the item array already have content
+                // and avoids duplication in the repeater of the unique key
+                if (!scope.items || !scope.items.length) {
+                    return;
+                }
+
                 // avoid infinite loop when modifying items
                 if (initialized) {
                     return;

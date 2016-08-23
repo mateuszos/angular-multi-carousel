@@ -11,19 +11,15 @@ multi-carousel {
       transition: transform .5s ease, -webkit-transform .5s ease; }
     multi-carousel inner.next-add {
       -webkit-transform: translateX(400px);
-          -ms-transform: translateX(400px);
               transform: translateX(400px); }
       multi-carousel inner.next-add.next-add-active {
         -webkit-transform: translateX(0);
-            -ms-transform: translateX(0);
                 transform: translateX(0); }
     multi-carousel inner.prev-add {
       -webkit-transform: translateX(-400px);
-          -ms-transform: translateX(-400px);
               transform: translateX(-400px); }
       multi-carousel inner.prev-add.prev-add-active {
         -webkit-transform: translateX(0);
-            -ms-transform: translateX(0);
                 transform: translateX(0); }
 
 carousel-item {
